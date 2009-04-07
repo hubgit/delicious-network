@@ -1,0 +1,10 @@
+Requirements:
+PHP 5, MySQL
+
+Usage:
+* Put the files somewhere useful on a web server
+* Create a MySQL database and import the structure from db.sql
+* Copy config-example.inc.php to config.inc.php and replace YOUR_DELICIOUS_USERNAME and DATABASE_* with real values
+* Run fetch.php regularly using cron to fetch updates from your Delicious network
+* Open the folder in a web browser to view the list of bookmarks
+
