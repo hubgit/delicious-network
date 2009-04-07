@@ -2,10 +2,11 @@
 <html>
 
 <head>
-  <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; user-scalable=no;"/>
+  <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>delicious network</title>
-  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>

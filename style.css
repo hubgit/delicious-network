@@ -3,20 +3,34 @@ body {
   margin:0;
 }
 
-ul {
+#items, #memes{
   padding: 0;
+}
+
+ul ul {
+  padding: 0 5px;
+}
+
+#memes li{
+  padding:5px 10px;
 }
 
 li {
   list-style-type: none;
+}
+
+#items li {
   border-bottom:1px solid #E0E0E0;
 }
 
-li a{
+#items li a{
   display: block;
-  color: inherit;
-  text-decoration: none;
   padding:5px 10px;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
 }
 
 a[selected], a:active {
@@ -36,6 +50,10 @@ a:visited {
   margin-right: 10px;
   color: #aaa;
   font-size: 90%;
+}
+
+.url {
+  color: #77f;
 }
 
 #search-box {
