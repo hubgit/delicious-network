@@ -8,3 +8,5 @@ Usage:
 * Run fetch.php regularly using cron to fetch updates from your Delicious network
 * Open the folder in a web browser to view the list of bookmarks
 
+Changelog:
+2009-04-07: Fetches and stores bookmarks, displays chronologically
