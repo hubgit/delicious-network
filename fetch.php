@@ -1,6 +1,7 @@
 <?php
 
-require 'db.php';
+require_once('db.php');
+touch('updated');
 
 $items = json_decode(file_get_contents(sprintf('http://feeds.delicious.com/v2/json/network/%s?count=100', rawurlencode($config['user']))));
 

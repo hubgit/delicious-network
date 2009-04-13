@@ -10,15 +10,18 @@
 </head>
 
 <body>
-
     <?php 
       $n = isset($_GET['n']) ? min(100, (int) $_GET['n']) : 100;
       $page = isset($_GET['page']) ? (int) $_GET['page'] - 1 : 0; 
       $proxy = isset($_GET['proxy']) ? TRUE : FALSE;
-    ?>
-    
-    <?php 
-      require 'db.php';
+      
+      $more = sprintf('%s?n=%d&page=%d', $_SERVER["SCRIPT_URI"], $n, $page + 2);
+      if ($proxy)
+        $more .= '&proxy';
+
+      if (isset($_GET['update']) || ($page === 0 && (time() - filemtime('updated') > 60 * 10))) include 'fetch.php'; // update frequency max 10 minutes
+      
+      require_once('db.php');
       $result = db_query("SELECT b.*, CONCAT(',', t.tag) as tags FROM bookmarks b LEFT JOIN tags t ON b.id = t.id GROUP BY b.id ORDER BY b.date DESC LIMIT %d,%d", $page * $n, $n); 
     ?>
     
@@ -38,6 +41,9 @@
         </a>
       </li>
     <?php endwhile; ?>
+    <li id="more">
+      <a href="<?php print $more; ?>">More</a>
+    </li>
   </ul>
   
   <div id="search-box">
